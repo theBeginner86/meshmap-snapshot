@@ -76,6 +76,9 @@ runs:
     - run: |
         ls -la
         pwd
+        cd action
+        ls -la
+        cd ..
         echo "Uploading using application file"
         echo "hello1"
         cat "__intermediate_file.yml"
