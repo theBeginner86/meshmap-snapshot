@@ -77,7 +77,7 @@ runs:
         ls -la
         pwd
         cd action
-        cat uploadApplicationUrl.sh
+        cat uploadApplicationFile.sh
         ls -la
         cd ..
         echo "Uploading using application file"
