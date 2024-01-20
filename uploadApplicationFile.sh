@@ -6,10 +6,10 @@
 
 # # get Meshery pattern file as escaped yaml str
 ls
-cat  "__intermediate_file.yml"
+cat  "../__intermediate_file.yml"
 echo "hello"
-MESHERY_PATTERN_FILE=$(awk '{ gsub(/"/, "\\\"", $0); printf "%s\\n", $0}' __intermediate_file.yml)
-# MESHERY_PATTERN_FILE=$(pattern_file=$(cat "./action/__intermediate_file.yml") node ./action/index.js)
+# MESHERY_PATTERN_FILE=$(awk '{ gsub(/"/, "\\\"", $0); printf "%s\\n", $0}' __intermediate_file.yml)
+MESHERY_PATTERN_FILE=$(pattern_file=$(cat "../__intermediate_file.yml") node ./action/normalize/index.js)
 
 # # convert to uri-encoded str
 UPLOAD_TYPE=$(printf %s "$UPLOAD_TYPE" | jq -sRr @uri)
