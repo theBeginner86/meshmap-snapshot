@@ -75,6 +75,8 @@ runs:
       shell: bash
     - run: |
         echo "Uploading using application file"
+        cat "__intermediate_file.yml"
+        cat __intermediate_file.yml
         AppId=$(MESHERY_SERVER_BASE_URL="https://playground.meshery.io" UPLOAD_TYPE="${{inputs.application_type}}" PROVIDER_TOKEN=${{ inputs.providerToken }}  ./action/uploadApplicationFile.sh)
         AppId=$(echo "$AppId" | sed 's/"//g')
         echo "APPLICATION_ID=$AppId" >> $GITHUB_ENV
