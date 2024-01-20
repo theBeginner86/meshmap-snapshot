@@ -6,6 +6,7 @@
 
 # # get Meshery pattern file as escaped yaml str
 ls
+echo "$FILE_PATH"
 cat  "$FILE_PATH"
 echo "hello"
 # MESHERY_PATTERN_FILE=$(awk '{ gsub(/"/, "\\\"", $0); printf "%s\\n", $0}' __intermediate_file.yml)
