@@ -7,7 +7,8 @@
 # # get Meshery pattern file as escaped yaml str
 node -v
 ls
-cat  __intermediate_file.yml
+cat  "__intermediate_file.yml"
+echo "hello"
 MESHERY_PATTERN_FILE=$(awk '{ gsub(/"/, "\\\"", $0); printf "%s\\n", $0}' __intermediate_file.yml)
 
 # # convert to uri-encoded str
