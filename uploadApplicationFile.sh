@@ -5,10 +5,6 @@
 # PROVIDER_TOKEN: MESHERY provider token
 
 # # get Meshery pattern file as escaped yaml str
-ls
-echo "$FILE_PATH"
-cat  "$FILE_PATH"
-echo "hello"
 # MESHERY_PATTERN_FILE=$(awk '{ gsub(/"/, "\\\"", $0); printf "%s\\n", $0}' __intermediate_file.yml)
 MESHERY_PATTERN_FILE=$(pattern_file=$(cat "$FILE_PATH") node ./action/normalize/index.js)
 
