@@ -98,8 +98,8 @@ runs:
         echo $AppId
         echo "\ntest--->"
         echo $AppId
-        # AppId=$(echo "$AppId" | sed 's/"//g')
-        # echo "APPLICATION_ID=$AppId" >> $GITHUB_ENV
+        AppId=$(echo "$AppId" | sed 's/"//g')
+        echo "APPLICATION_ID=$AppId" >> $GITHUB_ENV
       if: ${{ inputs.filePath && !inputs.designID }}
       shell: bash
     - run: |
