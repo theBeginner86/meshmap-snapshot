@@ -90,7 +90,7 @@ runs:
         echo "hello3"
         MESHERY_SERVER_BASE_URL="https://playground.meshery.io" UPLOAD_TYPE="${{inputs.application_type}}" PROVIDER_TOKEN=${{ inputs.providerToken }} FILE_PATH="__intermediate_file.yml" ./action/uploadApplicationFile.sh
         echo "hello4"
-        AppId=$(MESHERY_SERVER_BASE_URL="https://playground.meshery.io" UPLOAD_TYPE="${{inputs.application_type}}" PROVIDER_TOKEN=${{ inputs.providerToken }} FILE_PATH="__intermediate_file.yml"  ./action/uploadApplicationFile.sh)
+        AppId=$(MESHERY_SERVER_BASE_URL="https://playground.meshery.io" UPLOAD_TYPE="${{inputs.application_type}}" PROVIDER_TOKEN=${{ inputs.providerToken }} FILE_PATH="__intermediate_file.yml" ./action/uploadApplicationFile.sh)
         AppId=$(echo "$AppId" | sed 's/"//g')
         echo "APPLICATION_ID=$AppId" >> $GITHUB_ENV
       if: ${{ inputs.filePath && !inputs.designID }}
