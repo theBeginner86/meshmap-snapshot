@@ -76,7 +76,12 @@ runs:
       shell: bash
     - run: |
         echo "Uploading using application file"
+        ls
+        cd action
+        ls
+        cd ..
         AppId=$(MESHERY_SERVER_BASE_URL="https://playground.meshery.io" UPLOAD_TYPE="${{inputs.application_type}}" PROVIDER_TOKEN=${{ inputs.providerToken }}  ./action/uploadApplicationFile.sh)
+        echo "$AppId"
         AppId=$(echo "$AppId" | sed 's/"//g')
         echo "APPLICATION_ID=$AppId" >> $GITHUB_ENV
       if: ${{ inputs.filePath && !inputs.designID }}
