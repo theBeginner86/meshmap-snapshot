@@ -83,8 +83,8 @@ runs:
         echo "hello2"
         ls
         cd ..
-        MESHERY_SERVER_BASE_URL="https://playground.meshery.io" UPLOAD_TYPE="${{inputs.application_type}}" PROVIDER_TOKEN=${{ inputs.providerToken }}  ./action/uploadApplicationFile.sh
-        # AppId=$(MESHERY_SERVER_BASE_URL="https://playground.meshery.io" UPLOAD_TYPE="${{inputs.application_type}}" PROVIDER_TOKEN=${{ inputs.providerToken }}  ./action/uploadApplicationFile.sh)
+        # MESHERY_SERVER_BASE_URL="https://playground.meshery.io" UPLOAD_TYPE="${{inputs.application_type}}" PROVIDER_TOKEN=${{ inputs.providerToken }} ./action/uploadApplicationFile.sh
+        AppId=$(MESHERY_SERVER_BASE_URL="https://playground.meshery.io" UPLOAD_TYPE="${{inputs.application_type}}" PROVIDER_TOKEN=${{ inputs.providerToken }} ./action/uploadApplicationFile.sh)
         echo "$AppId"
         AppId=$(echo "$AppId" | sed 's/"//g')
         echo "APPLICATION_ID=$AppId" >> $GITHUB_ENV
