@@ -79,7 +79,7 @@ runs:
         echo "hello1"
         ls
         cd action
-        cat action.yml
+        cat uploadApplicationFile.sh
         echo "hello2"
         ls
         cd ..
