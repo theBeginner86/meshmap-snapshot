@@ -79,6 +79,7 @@ runs:
         echo "hello1"
         ls
         cd action
+        cat action.yml
         echo "hello2"
         ls
         cd ..
